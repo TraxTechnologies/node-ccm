@@ -1,0 +1,33 @@
+{
+  "name": "node-ccm",
+  "version": "0.0.1",
+  "description": "A library for managing instances of Cassandra Clusters",
+  "main": "dist/index.js",
+  "keywords": [
+    "cassandra",
+    "ccm"
+  ],
+  "author": "Chris Bargren <cbargren@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2017": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-plugin-import": "^2.7.0"
+  },
+  "scripts": {
+    "compile": "babel -d ./dist ./lib --source-maps inline",
+    "lint": "eslint ./lib ./test --quiet",
+    "prepare": "rm -rf ./dist; npm run compile",
+    "test": "npm run compile; mocha ./test --recursive --compilers js:babel-register --reporter spec"
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "lodash": "^4.17.4"
+  }
+}
