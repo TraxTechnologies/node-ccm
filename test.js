@@ -1,4 +1,3 @@
-const path = require('path');
 const readline = require('readline');
 
 const ccm = require('./dist');
@@ -14,9 +13,9 @@ cluster.initialize()
   .then(() => {
     const rl = readline.createInterface({
       input: process.stdin,
-      output: process.stdout
+      output: process.stdout,
     });
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       rl.question('Press [r] to remove, [s] to stop, and enter to leave it up... ', (response) => {
         let p = Promise.resolve();
         switch (response) {
@@ -25,6 +24,8 @@ cluster.initialize()
             break;
           case 's':
             p = cluster.shutdown();
+            break;
+          default:
             break;
         }
         rl.close();
