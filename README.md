@@ -26,10 +26,10 @@ cluster.initialize()
 
     /* ... */
 
-    // Stop the cluster and purge it's data...
+    // Stop the cluster and purge its data...
     cluster.remove();
 
-    // or just stop the cluster, leaving it's data intact
+    // or just stop the cluster, leaving its data intact
     cluster.shutdown();
   });
 ```

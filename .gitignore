@@ -1,4 +1,5 @@
 node_modules
 dist
 .releases
+npm-debug.log
 
