@@ -48,9 +48,11 @@ This will create a new instance of a cluster.
 
 #### Options
 
-* `clusterName` - The name of the cluster
-* `nodes`       - The number of nodes to create for the cluster
-* `version`     - The version of Cassandra to use for this cluster
+* `clusterName` *(String)* - The name of the cluster (default: *'node-ccm'*)
+* `nodes`       *(Integer)* - The number of nodes to create for the cluster (default: *1*)
+* `purge`       *(Boolean)* - If true and the specified cluster already exists, remove the cluster and purge its data before initializing the new cluster (default: *false*)
+* `verbose`     *(Boolean)* - Log all errors and messages from CCM (default: *false*)
+* `version`     *(String)* - The version of Cassandra to use for this cluster (default: *'3.9'*)
 
 ### Notes
 To support multiple node clusters in OS X, you'll need to setup loopback aliases for as many nodes as you'll be using. This is done using the following commands:

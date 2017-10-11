@@ -4,7 +4,9 @@ const ccm = require('./dist');
 
 const cluster = ccm.createCluster({
   nodes: 2,
+  // purge: true,
   version: 3.8,
+  // verbose: true,
 });
 
 cluster.initialize()
