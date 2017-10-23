@@ -3,6 +3,7 @@ const readline = require('readline');
 const ccm = require('./dist');
 
 const cluster = ccm.createCluster({
+  clusterConfig: { enable_user_defined_functions: true },
   // configureLoopbackAliases: false,
   nodes: 2,
   startAddress: '127.0.0.2',

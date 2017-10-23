@@ -48,6 +48,7 @@ This will create a new instance of a cluster.
 
 #### Options
 
+* `clusterConfig` *(Object)* - An object containing configuration values to update all nodes in the cluster with. *(default: `null`)*
 * `clusterName`   *(String)* - The name of the cluster *(default: `'node-ccm'`)*
 * `configureLoopbackAliases` *(Boolean)* - If true, system loopback aliases will be configured automatically if needed. *NOTE* `sudo` privileges are require for this action. *(default: `true`)*
 * `jmxPort`       *(Number)* - The port to use for JMX debugging for the first node in the cluster. You should only need to change this if port `7100` if already taken on the host machine (like if Cassandra is already running externally). Subsequent nodes will increment this number accordingly. *(default: `7100`)*
