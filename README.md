@@ -48,13 +48,14 @@ This will create a new instance of a cluster.
 
 #### Options
 
-* `clusterName`   *(String)* - The name of the cluster (default: *'node-ccm'*)
-* `jmxPort`       *(Number)* - The port to use for JMX debugging for the first node in the cluster. You should only need to change this if port `7100` if already taken on the host machine (like if Cassandra is already running externally). Subsequent nodes will increment this number accordingly. (default: *7100*)
-* `nodes`         *(Integer)* - The number of nodes to create for the cluster (default: *1*)
-* `purge`         *(Boolean)* - If true and the specified cluster already exists, remove the cluster and purge its data before initializing the new cluster (default: *false*)
-* `startAddress`  *(String|Number)* - The address to assign for your first node. Subsequent nodes will increment the last part of the address. Specifying a number instead of a string will define the last part of the address instead, resulting in an address like `127.0.0.{startAddress}`. (default: *'127.0.0.1'*)
-* `verbose`       *(Boolean)* - Log all errors and messages from CCM (default: *false*)
-* `version`       *(String)* - The version of Cassandra to use for this cluster (default: *'3.9'*)
+* `clusterName`   *(String)* - The name of the cluster *(default: `'node-ccm'`)*
+* `configureLoopbackAliases` *(Boolean)* - If true, system loopback aliases will be configured automatically if needed. *NOTE* `sudo` privileges are require for this action. *(default: `true`)*
+* `jmxPort`       *(Number)* - The port to use for JMX debugging for the first node in the cluster. You should only need to change this if port `7100` if already taken on the host machine (like if Cassandra is already running externally). Subsequent nodes will increment this number accordingly. *(default: `7100`)*
+* `nodes`         *(Integer)* - The number of nodes to create for the cluster *(default: `1`)*
+* `purge`         *(Boolean)* - If true and the specified cluster already exists, remove the cluster and purge its data before initializing the new cluster *(default: `false`)*
+* `startAddress`  *(String|Number)* - The address to assign for your first node. Subsequent nodes will increment the last part of the address. Specifying a number instead of a string will define the last part of the address instead, resulting in an address like `127.0.0.{startAddress}`. *(default: `'127.0.0.1'`)*
+* `verbose`       *(Boolean)* - Log all errors and messages from CCM *(default: `false`)*
+* `version`       *(String)* - The version of Cassandra to use for this cluster *(default: `'3.9'`)*
 
 ### Notes
 To support multiple node clusters in OS X, you'll need to setup loopback aliases for as many nodes as you'll be using. This is done using the following commands:

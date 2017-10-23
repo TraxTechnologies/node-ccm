@@ -3,10 +3,11 @@ const readline = require('readline');
 const ccm = require('./dist');
 
 const cluster = ccm.createCluster({
-  nodes: 3,
-  purge: true,
+  // configureLoopbackAliases: false,
+  nodes: 2,
+  startAddress: '127.0.0.2',
   jmxPort: 7101,
-  startAddress: '127.0.1.11',
+  purge: true,
   version: 3.8,
   // verbose: true,
 });
