@@ -6,16 +6,17 @@ const cluster = ccm.createCluster({
   clusterConfig: { enable_user_defined_functions: true },
   // configureLoopbackAliases: false,
   nodes: 2,
-  startAddress: '127.0.0.2',
+  startAddress: '127.0.0.4',
   jmxPort: 7101,
   purge: true,
-  version: 3.8,
+  version: 3.8
   // verbose: true,
 });
 
 const timeout = (t = 1000) => new Promise(resolve => setTimeout(resolve, t));
 
-cluster.initialize()
+cluster
+  .initialize()
   // .then(() => timeout())
   .then(() => cluster.populateNodes())
   // .then(() => timeout())
@@ -26,7 +27,7 @@ cluster.initialize()
   .then(() => {
     const rl = readline.createInterface({
       input: process.stdin,
-      output: process.stdout,
+      output: process.stdout
     });
     return new Promise((resolve) => {
       rl.question('Press [r] to remove, [s] to stop, and enter to leave it up... ', (response) => {
